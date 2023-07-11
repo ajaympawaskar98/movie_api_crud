@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const mysql = require('mysql');
+const mysql = require('mysql2');
 const app = express();
 
 const movieRoutes = require("./routes/movies");
@@ -12,7 +12,7 @@ app.use('/movie',movieRoutes);
 
 
 
-const port = Number(process.env.PORT || 8081);
+const port = Number(process.env.PORT || 3306);
 const server = app.listen(port, () => {
 console.log(`Server is running on port ${port}.`);
 });
